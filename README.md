@@ -1,3 +1,16 @@
+Танкистам, команнды git cmd:
+1) запуск GIT cmd
+2) cd директория в которой создастся папка с репозиторием
+3) git clone https://github.com/SpirinEvgeniy/RustedNail.git создаст папку с репозиторием и скопирует данные
+4) делаем текущей папку репозитория
+5) добавить все файлы из папки в репозиторий, задать commit и запушить в git
+	git add .
+	git commit -m "Initial commit"
+	git push
+
+6) для дальнейшей работы с выбранными файлами смотрите https://gist.github.com/oleglomako/f34ad2098acba084f4ba344b780ed298
+
+
 Для подклюения библиотеки opencascade сделано:
 
 0) Добавлена в ОС переменная среды OCCT со значением C:\OpenCASCADE-7.4.0-vc14-64\opencascade-7.4.0\
