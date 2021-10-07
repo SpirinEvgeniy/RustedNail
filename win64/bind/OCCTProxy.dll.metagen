@@ -38,6 +38,20 @@ Class OCCTProxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Interfaces:
     System.IDisposable
   Methods:
+    Example27(): PrivateScope, Public, HideBySig
+    Example28(): PrivateScope, Public, HideBySig
+    Example29(): PrivateScope, Public, HideBySig
+    Example30(): PrivateScope, Public, HideBySig
+    Example31(): PrivateScope, Public, HideBySig
+    Example32(): PrivateScope, Public, HideBySig
+    Example33(): PrivateScope, Public, HideBySig
+    Example34(): PrivateScope, Public, HideBySig
+    Example35(): PrivateScope, Public, HideBySig
+    Example36(): PrivateScope, Public, HideBySig
+    Example37(): PrivateScope, Public, HideBySig
+    InitOCCTProxy(): PrivateScope, Public, HideBySig
+    ~OCCTProxy(): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
     InitViewer(IntPtr): PrivateScope, Public, HideBySig
     Dump(TCollection_AsciiString* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     RedrawView(): PrivateScope, Public, HideBySig
@@ -97,6 +111,29 @@ Class OCCTProxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     ExportStl(TCollection_AsciiString* IsImplicitlyDereferenced): PrivateScope, Public, HideBySig
     TranslateModel(String, Int32, Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig
     Test(): PrivateScope, Public, HideBySig
-    InitOCCTProxy(): PrivateScope, Public, HideBySig
-    ~OCCTProxy(): PrivateScope, Public, HideBySig
-    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+    Example1(): PrivateScope, Public, HideBySig
+    Example2(): PrivateScope, Public, HideBySig
+    Example3(): PrivateScope, Public, HideBySig
+    Example4(): PrivateScope, Public, HideBySig
+    Example5(): PrivateScope, Public, HideBySig
+    Example6(): PrivateScope, Public, HideBySig
+    Example7(): PrivateScope, Public, HideBySig
+    Example8(): PrivateScope, Public, HideBySig
+    Example9(): PrivateScope, Public, HideBySig
+    Example10(): PrivateScope, Public, HideBySig
+    Example11(): PrivateScope, Public, HideBySig
+    Example12(): PrivateScope, Public, HideBySig
+    Example13(): PrivateScope, Public, HideBySig
+    Example14(): PrivateScope, Public, HideBySig
+    Example15(): PrivateScope, Public, HideBySig
+    Example16(): PrivateScope, Public, HideBySig
+    Example17(): PrivateScope, Public, HideBySig
+    Example18(): PrivateScope, Public, HideBySig
+    Example19(): PrivateScope, Public, HideBySig
+    Example20(): PrivateScope, Public, HideBySig
+    Example21(): PrivateScope, Public, HideBySig
+    Example22(): PrivateScope, Public, HideBySig
+    Example23(): PrivateScope, Public, HideBySig
+    Example24(): PrivateScope, Public, HideBySig
+    Example25(): PrivateScope, Public, HideBySig
+    Example26(): PrivateScope, Public, HideBySig

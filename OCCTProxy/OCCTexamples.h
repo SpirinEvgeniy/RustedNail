@@ -1443,8 +1443,6 @@ void ExampleOnPipeLocal(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_
 	myView->FitAll();
 }
 
-
-
 void ExampleOnGlueLocal(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) myView)
 {
 	AIS_ListOfInteractive aList;

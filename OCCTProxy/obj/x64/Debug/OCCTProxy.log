@@ -1,4 +1,5 @@
 ﻿  OCCTProxy.cpp
+  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
   OCCTProxy.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
      Создается библиотека ..\win64\\bind\OCCTProxy.lib и объект ..\win64\\bind\OCCTProxy.exp
   OCCTProxy.vcxproj -> C:\WD\WorkDirMSVC\RustedNail\win64\bind\OCCTProxy.dll

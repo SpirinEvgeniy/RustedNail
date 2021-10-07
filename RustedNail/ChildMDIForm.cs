@@ -215,6 +215,7 @@ namespace RustedNail
             myOCCTProxy.Test(); 
         }
 
+  
 
         // ОБРАБОТЧИКИ СОБЫТИЙ
         private void ChildMDIForm_SizeChanged(object sender, EventArgs e)

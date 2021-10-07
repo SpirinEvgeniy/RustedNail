@@ -976,6 +976,175 @@ public:
       SimpleBody(myAISContext(), myView());
   }
 
+  void Example1()
+  {
+      ExampleOnMirror(myAISContext(), myView());
+  }
+
+  void Example2()
+  {
+      ExampleOnMirroraxis(myAISContext(), myView());
+  }
+
+  void Example3()
+  {
+      ExampleOnCut(myAISContext(), myView());
+  }
+
+  void Example4()
+  {
+      ExampleOnCommon(myAISContext(), myView());
+  }
+
+  void Example5()
+  {
+      ExampleOnRotate(myAISContext(), myView());
+  }
+
+  void Example6()
+  {
+      ExampleOnScale(myAISContext(), myView());
+  }
+
+  void Example7()
+  {
+      ExampleOnPipe(myAISContext(), myView());
+  }
+
+  void Example8()
+  {
+      ExampleOnFuse(myAISContext(), myView());
+  }
+
+  void Example9()
+  {
+      ExampleOnDeform(myAISContext(), myView());
+  }
+
+  void Example10()
+  {
+      ExampleOnBox(myAISContext(), myView());
+  }
+
+  void Example11()
+  {
+      ExampleOnCylinder(myAISContext(), myView());
+  }
+
+  void Example12()
+  {
+      ExampleOnSphere(myAISContext(), myView());
+  }
+
+  void Example13()
+  {
+      ExampleOnDisplacement(myAISContext(), myView());
+  }
+
+  void Example14()
+  {
+      ExampleOnCone(myAISContext(), myView());
+  }
+
+  void Example15()
+  {
+      ExampleOnTorus(myAISContext(), myView());
+  }
+
+  void Example16()
+  {
+      ExampleOnWedge(myAISContext(), myView());
+  }
+
+
+  void Example17()
+  {
+      ExampleOnPrism(myAISContext(), myView());
+  }
+
+  void Example18()
+  {
+      ExampleOnRevol(myAISContext(), myView());
+  }
+
+  void Example19()
+  {
+      ExampleOnThru(myAISContext(), myView());
+  }
+  void Example20()
+  {
+      ExampleOnEvolved(myAISContext(), myView());
+  }
+  void Example21()
+  {
+      ExampleOnDraft(myAISContext(), myView());
+  }
+  void Example22()
+  {
+      ExampleOnSection(myAISContext(), myView());
+  }
+  void Example23()
+  {
+      ExampleOnBlend(myAISContext(), myView());
+  }
+  void Example24()
+  {
+      ExampleOnEvolvedblend(myAISContext(), myView());
+  }
+  void Example25()
+  {
+      ExampleOnChamf(myAISContext(), myView());
+  }
+  void Example26()
+  {
+      ExampleOnPrismLocal(myAISContext(), myView());
+  }
+  void Example27()
+  {
+      ExampleOnRevolLocal(myAISContext(), myView());
+  }
+  void Example28()
+  {
+      ExampleOnPipeLocal(myAISContext(), myView());
+  }
+  void Example29()
+  {
+      ExampleOnGlueLocal(myAISContext(), myView());
+  }
+  void Example30()
+  {
+      ExampleOnSplitLocal(myAISContext(), myView());
+  }
+  void Example31()
+  {
+      ExampleOnThickLocal(myAISContext(), myView());
+  }
+  void Example32()
+  {
+      ExampleOnOffsetLocal(myAISContext(), myView());
+  }
+  void Example33()
+  {
+      ExampleOnVertex(myAISContext(), myView());
+  }
+  void Example34()
+  {
+      ExampleOnEdge(myAISContext(), myView());
+  }
+  void Example35()
+  {
+      ExampleOnWire(myAISContext(), myView());
+  }
+  void Example36()
+  {
+      ExampleOnExplorer(myAISContext(), myView());
+  }
+  void Example37()
+  {
+      ExampleOnLinearLocal(myAISContext(), myView());
+  }
+  
+
 
   /// <summary>
   ///Initialize OCCTProxy
