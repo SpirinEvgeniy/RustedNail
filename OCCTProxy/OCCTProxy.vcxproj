@@ -195,6 +195,10 @@
   <ItemGroup>
     <ClCompile Include="OCCTProxy.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework.h" />
+    <ClInclude Include="OCCTexamples.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
