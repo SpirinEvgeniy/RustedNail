@@ -19,6 +19,7 @@ namespace RustedNail
         CurAction3d_GlobalPanning,
         CurAction3d_DynamicRotation
     }
+
     public enum CurrentPressedKey
     {
         CurPressedKey_Nothing,
@@ -38,7 +39,6 @@ namespace RustedNail
 
     public partial class ChildMDIForm : Form
     {
-
         // ПОЛЯ
         private OCCTProxy myOCCTProxy;
         protected CurrentAction3d myCurrentMode;
@@ -55,6 +55,7 @@ namespace RustedNail
         protected int theRectDownX;
         protected int theRectDownY;
         protected bool IsRectVisible;
+
         // СВОЙСТВА
         public OCCTProxy View
         {
@@ -98,8 +99,8 @@ namespace RustedNail
                 this.myDegenerateModeIsOn = value;
             }
         }
-        // МЕТОДЫ
 
+        // МЕТОДЫ
         public ChildMDIForm()
         {
             InitializeComponent();
@@ -108,7 +109,6 @@ namespace RustedNail
             myCurrentMode = CurrentAction3d.CurAction3d_Nothing;
             myCurrentPressedKey = CurrentPressedKey.CurPressedKey_Nothing;
         }
-
 
         public void InitV3D()
         {
@@ -164,7 +164,6 @@ namespace RustedNail
             myOCCTProxy.MoveTo(x, y);
         }
 
-
         protected void MultiInputEvent(int x, int y)
         {
             myOCCTProxy.ShiftSelect();
@@ -215,8 +214,6 @@ namespace RustedNail
             myOCCTProxy.Test(); 
         }
 
-  
-
         // ОБРАБОТЧИКИ СОБЫТИЙ
         private void ChildMDIForm_SizeChanged(object sender, EventArgs e)
         {
@@ -228,7 +225,6 @@ namespace RustedNail
             myOCCTProxy.RedrawView();
             myOCCTProxy.UpdateView();
         }
-
 
         private void ChildMDIForm_MouseMove(object sender, MouseEventArgs e)
         {
@@ -293,8 +289,6 @@ namespace RustedNail
                 else
                     MoveEvent(e.X, e.Y);
             }
-
-
         }
 
         private void ChildMDIForm_MouseUp(object sender, MouseEventArgs e)
@@ -423,7 +417,7 @@ namespace RustedNail
                                 //start the rotation
                                 myOCCTProxy.StartRotation(e.X, e.Y);
                                 break;
-                            case RustedNail.CurrentAction3d.CurAction3d_WindowZooming:
+                            case CurrentAction3d.CurAction3d_WindowZooming:
                                 this.Cursor = System.Windows.Forms.Cursors.Hand;
                                 break;
                             default:

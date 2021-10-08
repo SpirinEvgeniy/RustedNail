@@ -25,3 +25,7 @@ C:\WD\WorkDirMSVC\RustedNail\RustedNail\bin\Debug\OCCTProxy.pdb
 C:\WD\WorkDirMSVC\RustedNail\win64\bind\RustedNail.exe.config
 C:\WD\WorkDirMSVC\RustedNail\win64\bind\RustedNail.exe
 C:\WD\WorkDirMSVC\RustedNail\win64\bind\RustedNail.pdb
+C:\AllProgrammingProjects\RustedNail\win64\bind\RustedNail.exe.config
+C:\AllProgrammingProjects\RustedNail\win64\bind\RustedNail.exe
+C:\AllProgrammingProjects\RustedNail\win64\bind\RustedNail.pdb
+C:\AllProgrammingProjects\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.CopyComplete

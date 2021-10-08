@@ -150,7 +150,7 @@ namespace RustedNail
             this.toolStripRunButton.Name = "toolStripRunButton";
             this.toolStripRunButton.Size = new System.Drawing.Size(23, 22);
             this.toolStripRunButton.Text = "Запустить пример";
-            this.toolStripRunButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripRunButton.Click += new System.EventHandler(this.toolStripRunButton_Click);
             // 
             // toolStripExampleIDTextBox
             // 
@@ -163,7 +163,6 @@ namespace RustedNail
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(89, 22);
             this.toolStripLabel1.Text = "1-37 примеров";
-           
             // 
             // ParentMDIForm
             // 

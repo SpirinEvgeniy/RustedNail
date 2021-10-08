@@ -10,11 +10,9 @@ using System.Windows.Forms;
 
 namespace RustedNail
 {
-
-
     public partial class ParentMDIForm : Form
     {
-        protected RustedNail.ModelFormat myModelFormat;
+        protected ModelFormat myModelFormat;
 
         int _lastChildFormNumber = 0;
 
@@ -27,7 +25,6 @@ namespace RustedNail
         {
             _lastChildFormNumber++;
 
-
             ChildMDIForm childMDIForm = new ChildMDIForm();
             childMDIForm.MdiParent = this;
             childMDIForm.Show();
@@ -35,8 +32,6 @@ namespace RustedNail
             childMDIForm.InitV3D();
             childMDIForm.View.SetDisplayMode(1);
             childMDIForm.Test();
-
-
         }
 
         private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,7 +66,7 @@ namespace RustedNail
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripRunButton_Click(object sender, EventArgs e)
         {
             int number;
             ChildMDIForm childMDIForm = (ChildMDIForm)this.ActiveMdiChild;
@@ -194,7 +189,5 @@ namespace RustedNail
                 }
             }
         }
-
-
     }
 }
