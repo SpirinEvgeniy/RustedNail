@@ -12,9 +12,10 @@ namespace RustedNail
 {
     public partial class ParentMDIForm : Form
     {
+        private bool isWindowsTabbed = false;
+        private int lastChildFormNumber = 0;
         protected ModelFormat myModelFormat;
-
-        int _lastChildFormNumber = 0;
+        private WindowsTabPanelManager windowsTabPanelManager;
 
         public ParentMDIForm()
         {
@@ -23,7 +24,7 @@ namespace RustedNail
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _lastChildFormNumber++;
+            lastChildFormNumber++;
 
             ChildMDIForm childMDIForm = new ChildMDIForm();
             childMDIForm.MdiParent = this;
@@ -188,6 +189,23 @@ namespace RustedNail
                         break;
                 }
             }
+        }
+
+        private void toTabPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isWindowsTabbed) //если сейчас в режиме окон
+            {
+                windowsTabPanelManager = new WindowsTabPanelManager(this);
+                windowsTabPanelManager.MakeActive();
+                toTabPanelToolStripMenuItem.Text = "To windows mode";
+            }
+            else //если сейчас в режиме вкладок
+            {
+                toTabPanelToolStripMenuItem.Text = "To tabs mode";
+                windowsTabPanelManager.MakeInactive();
+            }
+
+            isWindowsTabbed = !isWindowsTabbed;
         }
     }
 }
