@@ -29,3 +29,15 @@ C:\AllProgrammingProjects\RustedNail\win64\bind\RustedNail.exe.config
 C:\AllProgrammingProjects\RustedNail\win64\bind\RustedNail.exe
 C:\AllProgrammingProjects\RustedNail\win64\bind\RustedNail.pdb
 C:\AllProgrammingProjects\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.CopyComplete
+C:\GitHub\RustedNail\win64\bind\RustedNail.exe.config
+C:\GitHub\RustedNail\win64\bind\RustedNail.exe
+C:\GitHub\RustedNail\win64\bind\RustedNail.pdb
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.AssemblyReference.cache
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.ChildMDIForm.resources
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.ParentMDIForm.resources
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.Properties.Resources.resources
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.GenerateResource.cache
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.CoreCompileInputs.cache
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.CopyComplete
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.exe
+C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.pdb
