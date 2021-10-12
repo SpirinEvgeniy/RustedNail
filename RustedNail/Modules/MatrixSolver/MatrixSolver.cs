@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,32 +10,77 @@ namespace RustedNail.Modules.MatrixSolver
 {
     public class MatrixSolver : ProgramModule
     {
+        //здесь создайте поля для ваших форм, с модификатором доступа private
         private MainForm_MatrixSolver mainForm;
-        public ParentMDIForm parentForm;
-        public ToolStrip toolStrip;
 
         public void Load(ParentMDIForm parentMDIForm)
         {
-            //здесь пишите ваш доп. код для подгрузки
+            //здесь пишите ваш доп. код для подгрузки (инициализация форм и т.п.)
 
+            parentForm = parentMDIForm;
             mainForm = new MainForm_MatrixSolver();
             mainForm.MdiParent = parentMDIForm;
             mainForm.Show();
-            InitialiseToolStrip(parentMDIForm);
-            parentForm = parentMDIForm;
+            ChangeToolStripSettings(parentMDIForm);
         }
 
-        private void InitialiseToolStrip(ParentMDIForm parentMDIForm)
+        private void ChangeToolStripSettings(ParentMDIForm parentMDIForm)
         {
-            toolStrip = new ToolStrip();
-            toolStrip.Parent = parentMDIForm;
-            toolStrip.Dock = DockStyle.Right;
+            InitialiseToolStrip(parentMDIForm);
 
-            //здесь пишите ваш код для настройки ToolStrip
-            //ToolStripItem item1 = new ToolStripItem();
+            //здесь пишите ваш код для настройки ToolStrip (добавление кнопок и т.п.)
+            ToolStripLabel toolStripItem1Label = new ToolStripLabel();
+            toolStripItem1Label.Text = "Matrix Solver";
 
+            ToolStripItem toolStripItem2PlayButton = new ToolStripMenuItem();
+            toolStripItem2PlayButton.Name = "PlayButton";
+            toolStripItem2PlayButton.Click += toolStripItem2PlayButton_Click;
+            toolStripItem2PlayButton.Image = Image.FromFile(@"C:\GitHub\RustedNail\RustedNail\Modules\MatrixSolver\Icons\Play.png");
+            toolStripItem2PlayButton.ToolTipText = "Play";
 
-            toolStrip.Show();
+            ToolStripItem toolStripItem3StopButton = new ToolStripMenuItem();
+            toolStripItem3StopButton.Name = "StopButton";
+            toolStripItem3StopButton.Click += toolStripItem3StopButton_Click;
+            toolStripItem3StopButton.Image = Image.FromFile(@"C:\GitHub\RustedNail\RustedNail\Modules\MatrixSolver\Icons\Stop.png");
+            toolStripItem3StopButton.ToolTipText = "Stop";
+
+            ToolStripItem toolStripItem4PasteButton = new ToolStripMenuItem();
+            toolStripItem4PasteButton.Name = "PasteButton";
+            toolStripItem4PasteButton.Click += toolStripItem4PasteButton_Click;
+            toolStripItem4PasteButton.Image = Image.FromFile(@"C:\GitHub\RustedNail\RustedNail\Modules\MatrixSolver\Icons\Paste.png");
+            toolStripItem4PasteButton.ToolTipText = "Paste";
+
+            ToolStripItem toolStripItem5ExportButton = new ToolStripMenuItem();
+            toolStripItem5ExportButton.Name = "ExportButton";
+            toolStripItem5ExportButton.Click += toolStripItem5ExportButton_Click;
+            toolStripItem5ExportButton.Image = Image.FromFile(@"C:\GitHub\RustedNail\RustedNail\Modules\MatrixSolver\Icons\Export.png");
+            toolStripItem5ExportButton.ToolTipText = "Export";
+
+            toolStrip.Items.Add(toolStripItem1Label);
+            toolStrip.Items.Add(toolStripItem2PlayButton);
+            toolStrip.Items.Add(toolStripItem3StopButton);
+            toolStrip.Items.Add(toolStripItem4PasteButton);
+            toolStrip.Items.Add(toolStripItem5ExportButton);
+        }
+
+        private void toolStripItem3StopButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripItem5ExportButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripItem4PasteButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripItem2PlayButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

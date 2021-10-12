@@ -15,6 +15,7 @@ namespace RustedNail
     {
         private int lastChildFormNumber = 0;
         protected ModelFormat myModelFormat;
+        private List<ProgramModule> activeModules = new List<ProgramModule>();
 
         public ParentMDIForm()
         {
