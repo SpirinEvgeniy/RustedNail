@@ -37,7 +37,6 @@ namespace RustedNail
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toTabPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +44,8 @@ namespace RustedNail
             this.toolStripRunButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripExampleIDTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.modulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matrixSolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip_OCCT_examples.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,8 @@ namespace RustedNail
             this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.windowsToolStripMenuItem});
+            this.windowsToolStripMenuItem,
+            this.modulesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
@@ -103,7 +105,6 @@ namespace RustedNail
             // windowsToolStripMenuItem
             // 
             this.windowsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toTabPanelToolStripMenuItem,
             this.cascadeToolStripMenuItem,
             this.horizontalToolStripMenuItem,
             this.verticalToolStripMenuItem});
@@ -111,31 +112,24 @@ namespace RustedNail
             this.windowsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.windowsToolStripMenuItem.Text = "Windows";
             // 
-            // toTabPanelToolStripMenuItem
-            // 
-            this.toTabPanelToolStripMenuItem.Name = "toTabPanelToolStripMenuItem";
-            this.toTabPanelToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.toTabPanelToolStripMenuItem.Text = "To tabs mode";
-            this.toTabPanelToolStripMenuItem.Click += new System.EventHandler(this.toTabPanelToolStripMenuItem_Click);
-            // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // horizontalToolStripMenuItem
             // 
             this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.horizontalToolStripMenuItem.Text = "Horizontal";
             this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.horizontalToolStripMenuItem_Click);
             // 
             // verticalToolStripMenuItem
             // 
             this.verticalToolStripMenuItem.Name = "verticalToolStripMenuItem";
-            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.verticalToolStripMenuItem.Text = "Vertical";
             this.verticalToolStripMenuItem.Click += new System.EventHandler(this.verticalToolStripMenuItem_Click);
             // 
@@ -173,6 +167,21 @@ namespace RustedNail
             this.toolStripLabel1.Size = new System.Drawing.Size(89, 22);
             this.toolStripLabel1.Text = "1-37 примеров";
             // 
+            // modulesToolStripMenuItem
+            // 
+            this.modulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.matrixSolverToolStripMenuItem});
+            this.modulesToolStripMenuItem.Name = "modulesToolStripMenuItem";
+            this.modulesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.modulesToolStripMenuItem.Text = "Modules";
+            // 
+            // matrixSolverToolStripMenuItem
+            // 
+            this.matrixSolverToolStripMenuItem.Name = "matrixSolverToolStripMenuItem";
+            this.matrixSolverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.matrixSolverToolStripMenuItem.Text = "Matrix solver";
+            this.matrixSolverToolStripMenuItem.Click += new System.EventHandler(this.matrixSolverToolStripMenuItem_Click);
+            // 
             // ParentMDIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,7 +218,8 @@ namespace RustedNail
         private System.Windows.Forms.ToolStripButton toolStripRunButton;
         private System.Windows.Forms.ToolStripTextBox toolStripExampleIDTextBox;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripMenuItem toTabPanelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modulesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matrixSolverToolStripMenuItem;
     }
 }
 

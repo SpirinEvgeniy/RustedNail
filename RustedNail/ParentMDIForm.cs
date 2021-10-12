@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RustedNail.Modules.MatrixSolver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,8 @@ namespace RustedNail
 {
     public partial class ParentMDIForm : Form
     {
-        private bool isWindowsTabbed = false;
         private int lastChildFormNumber = 0;
         protected ModelFormat myModelFormat;
-        private WindowsTabPanelManager windowsTabPanelManager;
 
         public ParentMDIForm()
         {
@@ -191,21 +190,10 @@ namespace RustedNail
             }
         }
 
-        private void toTabPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void matrixSolverToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!isWindowsTabbed) //если сейчас в режиме окон
-            {
-                windowsTabPanelManager = new WindowsTabPanelManager(this);
-                windowsTabPanelManager.MakeActive();
-                toTabPanelToolStripMenuItem.Text = "To windows mode";
-            }
-            else //если сейчас в режиме вкладок
-            {
-                toTabPanelToolStripMenuItem.Text = "To tabs mode";
-                windowsTabPanelManager.MakeInactive();
-            }
-
-            isWindowsTabbed = !isWindowsTabbed;
+            MatrixSolver matrixSolver = new MatrixSolver();
+            matrixSolver.Load(this);
         }
     }
 }

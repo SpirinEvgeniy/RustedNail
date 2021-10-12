@@ -1,36 +1,20 @@
 <Project>
   <Name>RustedNail</Name>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
-    <Name>Architecture</Name>
+    <Name>3Dactions architecture</Name>
     <Language>CSharp</Language>
     <Entities>
-      <Entity type="Class">
-        <Name>ParentMDIForm</Name>
-        <Access>Public</Access>
-        <Location left="10" top="10" />
-        <Size width="162" height="77" />
-        <Collapsed>False</Collapsed>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>ChildMDIForm</Name>
-        <Access>Public</Access>
-        <Location left="206" top="10" />
-        <Size width="162" height="77" />
-        <Collapsed>False</Collapsed>
-        <Modifier>None</Modifier>
-      </Entity>
       <Entity type="Interface">
         <Name>IActionManager</Name>
         <Access>Public</Access>
-        <Location left="766" top="10" />
+        <Location left="301" top="10" />
         <Size width="162" height="61" />
         <Collapsed>False</Collapsed>
       </Entity>
       <Entity type="Class">
         <Name>RotationManager</Name>
         <Access>Public</Access>
-        <Location left="766" top="187" />
+        <Location left="301" top="187" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -38,7 +22,7 @@
       <Entity type="Class">
         <Name>PanningManager</Name>
         <Access>Public</Access>
-        <Location left="475" top="187" />
+        <Location left="10" top="187" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -46,25 +30,48 @@
       <Entity type="Class">
         <Name>ZoomingManager</Name>
         <Access>Public</Access>
-        <Location left="1047" top="187" />
+        <Location left="582" top="187" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Realization" first="4" second="2">
+      <Relationship type="Realization" first="2" second="0">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
-      <Relationship type="Realization" first="3" second="2">
+      <Relationship type="Realization" first="1" second="0">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
-      <Relationship type="Realization" first="5" second="2">
+      <Relationship type="Realization" first="3" second="0">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
     </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Modules architecture</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Comment">
+        <Text>Описание архитектуры:
+
+1) Имеется класс ProgramModulesManager - менеджер, который отвечает за подгрузку модулей и т.п.
+</Text>
+        <Location left="10" top="10" />
+        <Size width="629" height="77" />
+      </Entity>
+      <Entity type="Class">
+        <Name>ProgramModulesManager</Name>
+        <Access>Public</Access>
+        <Location left="687" top="10" />
+        <Size width="183" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
   </ProjectItem>
 </Project>
