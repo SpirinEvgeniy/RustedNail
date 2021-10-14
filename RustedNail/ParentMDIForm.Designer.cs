@@ -48,6 +48,7 @@ namespace RustedNail
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripPanel1 = new System.Windows.Forms.ToolStripPanel();
             this.toolStripPanel4 = new System.Windows.Forms.ToolStripPanel();
+            this.cutSimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip_OCCT_examples.SuspendLayout();
             this.SuspendLayout();
@@ -80,27 +81,27 @@ namespace RustedNail
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.closeAllToolStripMenuItem.Text = "Close All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.closeAllToolStripMenuItem_Click);
             // 
@@ -138,7 +139,8 @@ namespace RustedNail
             // modulesToolStripMenuItem
             // 
             this.modulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.matrixSolverToolStripMenuItem});
+            this.matrixSolverToolStripMenuItem,
+            this.cutSimToolStripMenuItem});
             this.modulesToolStripMenuItem.Name = "modulesToolStripMenuItem";
             this.modulesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.modulesToolStripMenuItem.Text = "Modules";
@@ -207,6 +209,13 @@ namespace RustedNail
             this.toolStripPanel4.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripPanel4.Size = new System.Drawing.Size(1184, 25);
             // 
+            // cutSimToolStripMenuItem
+            // 
+            this.cutSimToolStripMenuItem.Name = "cutSimToolStripMenuItem";
+            this.cutSimToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cutSimToolStripMenuItem.Text = "CutSim";
+            this.cutSimToolStripMenuItem.Click += new System.EventHandler(this.cutSimToolStripMenuItem_Click);
+            // 
             // ParentMDIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +258,7 @@ namespace RustedNail
         private System.Windows.Forms.ToolStripMenuItem matrixSolverToolStripMenuItem;
         public System.Windows.Forms.ToolStripPanel toolStripPanel1;
         public System.Windows.Forms.ToolStripPanel toolStripPanel4;
+        private System.Windows.Forms.ToolStripMenuItem cutSimToolStripMenuItem;
     }
 }
 

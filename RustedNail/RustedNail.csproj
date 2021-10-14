@@ -56,6 +56,9 @@
     <Compile Include="ChildMDIForm.Designer.cs">
       <DependentUpon>ChildMDIForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\CutSim\CutSim.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\MatrixSolver\MainForm_MatrixSolver.cs">
       <SubType>Form</SubType>
     </Compile>

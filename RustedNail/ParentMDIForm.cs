@@ -196,5 +196,17 @@ namespace RustedNail
             MatrixSolver matrixSolver = new MatrixSolver();
             matrixSolver.Load(this);
         }
+
+        private void cutSimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lastChildFormNumber++;
+
+            ChildMDIForm CutSimForm = new CutSim();
+            CutSimForm.MdiParent = this;
+            CutSimForm.Show();
+            CutSimForm.InitView();
+            CutSimForm.InitV3D();
+            CutSimForm.View.SetDisplayMode(1);
+        }
     }
 }
