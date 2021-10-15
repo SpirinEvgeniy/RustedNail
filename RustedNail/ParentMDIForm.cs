@@ -1,4 +1,6 @@
 ﻿using RustedNail.Modules.MatrixSolver;
+using RustedNail.Modules.CutSim;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace RustedNail
 {
@@ -201,7 +205,7 @@ namespace RustedNail
         {
             lastChildFormNumber++;
 
-            ChildMDIForm CutSimForm = new CutSim();
+            ChildMDIForm CutSimForm = new CutSimForm();
             CutSimForm.MdiParent = this;
             CutSimForm.Show();
             CutSimForm.InitView();
