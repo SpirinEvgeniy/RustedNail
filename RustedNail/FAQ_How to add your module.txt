@@ -1,0 +1,55 @@
+﻿1. В папке Modules создайте папку с названием вашего модуля
+2. В созданной папке создайте класс с названием вашего модуля
+3. Скопируйте код в конце данного файла (шаблон) и вставьте в файл вашего класса
+4. Переименуйте namespace
+5. Переимунуйте класс
+6. В папке с вашим модулем создайте все необходимые вам формы
+7. В своем классе создайте поля для ваших форм с модификатором private
+8. В методе Load проинициализируйте ваши формы, дайте им заголовки, задайте им MDI-родителя *ваша форма*.MdiParent = parentMDIForm
+   Обязательно добавьте все формы в коллекцию вашего класса
+9. В методе ChangeToolStripSetting добавьте необходимые ToolStripItem'ы, добавьте им иконки (предварительно создав в своей папке
+   папку Icons)(Указывайте путь не хардкодом! Посмотрите пример путей иконок в модуле MatrixSolver)
+   Не забудьте каждый созданный ToolStripItem добавить в toolStrip (toolStrip.Items.Add(*название вашего ToolStripItem'а*))
+   Создайте обработчики событий нажатий на созданные кнопки в toolStrip'е.
+10. Перейдите в файл ParentMDIForm.cs и добавьте в код директиву using RustedNail.Modules.*ваш класс* (ваш namespace)
+11. В конструкторе ParentMDIForm на MenuStrip'е во вкладке Modules создайте кнопку с названием вашего модуля
+12. Добавьте обработчик нажатия созданной кнопки
+13. В данном обработчике создайте экземпляр вашего модуля, проинициализируйте его
+14. Вызовите у созданного экземпляра метод Load с аргументом this
+15. Готово
+
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace RustedNail.Modules.*ваш класс*
+{
+    public class *ваш класс* : ProgramModule
+    {
+        //здесь создайте поля для ваших форм, с модификатором доступа private
+
+        public void Load(ParentMDIForm parentMDIForm)
+        {
+            parentForm = parentMDIForm;
+            //здесь пишите ваш доп. код для подгрузки (инициализация форм, их заголовок и т.п.)
+            //Обязательно каждую форму добавьте в коллекцию форм formCollection!
+
+          
+            formCollection.Add(***);
+            ChangeToolStripSettings(parentMDIForm);
+        }
+
+        private void ChangeToolStripSettings(ParentMDIForm parentMDIForm)
+        {
+            InitialiseToolStrip(parentMDIForm);
+
+            //здесь пишите ваш код для настройки ToolStrip (добавление кнопок, подгрузка иконок и т.п.)
+            //первым ToolStripItem'ом обязательно должен быть Label с названием вашего модуля
+
+        }
+    }
+}
