@@ -56,11 +56,12 @@
     <Compile Include="ChildMDIForm.Designer.cs">
       <DependentUpon>ChildMDIForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\CutSim\CutSimForm.cs">
+    <Compile Include="Modules\CutSim\CutSim.cs" />
+    <Compile Include="Modules\CutSim\CutSim_MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\CutSim\CutSimForm.Designer.cs">
-      <DependentUpon>CutSimForm.cs</DependentUpon>
+    <Compile Include="Modules\CutSim\CutSim_MainForm.Designer.cs">
+      <DependentUpon>CutSim_MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\MatrixSolver\MainForm_MatrixSolver.cs">
       <SubType>Form</SubType>
@@ -81,9 +82,6 @@
     <EmbeddedResource Include="ChildMDIForm.resx">
       <DependentUpon>ChildMDIForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\CutSim\CutSimForm.resx">
-      <DependentUpon>CutSimForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modules\MatrixSolver\MainForm_MatrixSolver.resx">
       <DependentUpon>MainForm_MatrixSolver.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,7 +96,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,7 +114,7 @@
     <Folder Include="Modules\MatrixSolver\Icons\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Modules\CutSim\Исходный контур.png" />
+    <Content Include="FAQ_How to add your module.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

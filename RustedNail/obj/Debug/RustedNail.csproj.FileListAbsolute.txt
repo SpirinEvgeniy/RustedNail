@@ -43,4 +43,3 @@ C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.exe
 C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.pdb
 C:\GitHub\RustedNail\RustedNail\obj\Debug\RustedNail.Modules.MatrixSolver.MainForm_MatrixSolver.resources
 C:\WD\WorkDirMSVC\RustedNail\RustedNail\obj\Debug\RustedNail.Modules.MatrixSolver.MainForm_MatrixSolver.resources
-C:\WD\WorkDirMSVC\RustedNail\RustedNail\obj\Debug\RustedNail.Modules.CutSim.CutSimForm.resources

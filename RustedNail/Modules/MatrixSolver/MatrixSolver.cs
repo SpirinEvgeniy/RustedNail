@@ -15,12 +15,17 @@ namespace RustedNail.Modules.MatrixSolver
 
         public void Load(ParentMDIForm parentMDIForm)
         {
-            //здесь пишите ваш доп. код для подгрузки (инициализация форм и т.п.)
+            //здесь пишите ваш доп. код для подгрузки (инициализация форм, их заголовок и т.п.)
+            //Обязательно каждую форму добавьте в коллекцию форм formCollection!
 
             parentForm = parentMDIForm;
             mainForm = new MainForm_MatrixSolver();
             mainForm.MdiParent = parentMDIForm;
+            mainForm.Text = "Matrix Solver";
             mainForm.Show();
+
+
+            formCollection.Add(mainForm);
             ChangeToolStripSettings(parentMDIForm);
         }
 
@@ -29,6 +34,7 @@ namespace RustedNail.Modules.MatrixSolver
             InitialiseToolStrip(parentMDIForm);
 
             //здесь пишите ваш код для настройки ToolStrip (добавление кнопок и т.п.)
+            //первым ToolStripItem'ом должен быть Label с названием вашего модуля
             ToolStripLabel toolStripItem1Label = new ToolStripLabel();
             toolStripItem1Label.Text = "Matrix Solver";
 
@@ -82,5 +88,6 @@ namespace RustedNail.Modules.MatrixSolver
         {
             
         }
+
     }
 }

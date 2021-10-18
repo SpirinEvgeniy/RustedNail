@@ -1,6 +1,5 @@
 ﻿using RustedNail.Modules.MatrixSolver;
 using RustedNail.Modules.CutSim;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
 
 namespace RustedNail
 {
@@ -203,14 +200,8 @@ namespace RustedNail
 
         private void cutSimToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lastChildFormNumber++;
-
-            ChildMDIForm CutSimForm = new CutSimForm();
-            CutSimForm.MdiParent = this;
-            CutSimForm.Show();
-            CutSimForm.InitView();
-            CutSimForm.InitV3D();
-            CutSimForm.View.SetDisplayMode(1);
+            CutSim cutSim = new CutSim();
+            cutSim.Load(this);
         }
     }
 }
