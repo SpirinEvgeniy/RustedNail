@@ -1,4 +1,5 @@
-﻿  OCCTProxy.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : Процесс не может получить доступ к файлу "c:\wd\workdirmsvc\rustednail\occtproxy\obj\x64\debug\vc142.pdb", так как этот файл используется другим процессом.
+  OCCTProxy.cpp
   .NETFramework,Version=v4.0.AssemblyAttributes.cpp
   OCCTProxy.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
      Создается библиотека ..\win64\\bind\OCCTProxy.lib и объект ..\win64\\bind\OCCTProxy.exp

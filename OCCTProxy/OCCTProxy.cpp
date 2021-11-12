@@ -1144,7 +1144,10 @@ public:
       ExampleOnLinearLocal(myAISContext(), myView());
   }
   
-
+  void Example38()
+  {
+      ExampleOnNut(myAISContext(), myView());
+  }
 
   /// <summary>
   ///Initialize OCCTProxy
