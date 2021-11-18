@@ -214,6 +214,8 @@ namespace RustedNail
             CutSimForm.InitView();
             CutSimForm.InitV3D();
             CutSimForm.View.SetDisplayMode(1);
+            //CutSimForm.Test();
+
         }
     }
 }

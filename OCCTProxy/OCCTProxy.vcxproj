@@ -196,6 +196,7 @@
     <ClCompile Include="OCCTProxy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CutSimCore.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="OCCTexamples.h" />
   </ItemGroup>

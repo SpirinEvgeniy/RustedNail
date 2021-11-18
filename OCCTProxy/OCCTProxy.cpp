@@ -1,5 +1,6 @@
 #include "Framework.h"
 #include "OCCTexamples.h"
+#include "CutSimCore.h"
 
 //! Auxiliary tool for converting C# string into UTF-8 string.
 static TCollection_AsciiString toAsciiString (String^ theString)
@@ -1147,6 +1148,12 @@ public:
   void Example38()
   {
       ExampleOnNut(myAISContext(), myView());
+  }
+
+
+  void CreateGearRack()
+  {
+      GearRack(myAISContext(), myView());
   }
 
   /// <summary>

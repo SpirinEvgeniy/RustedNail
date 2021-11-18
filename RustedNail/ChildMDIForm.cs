@@ -40,7 +40,7 @@ namespace RustedNail
     public partial class ChildMDIForm : Form
     {
         // ПОЛЯ
-        private OCCTProxy myOCCTProxy;
+        protected OCCTProxy myOCCTProxy;
         protected CurrentAction3d myCurrentMode;
         protected CurrentPressedKey myCurrentPressedKey;
         protected float myCurZoom;
@@ -127,7 +127,7 @@ namespace RustedNail
             this.myOCCTProxy.SetAISContext(View);
         }
 
-        private void DrawRectangle(bool draw)
+        protected void DrawRectangle(bool draw)
         {
             Graphics gr = Graphics.FromHwnd(this.Handle);
             System.Drawing.Pen p = null;
