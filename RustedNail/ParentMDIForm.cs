@@ -194,6 +194,9 @@ namespace RustedNail
                     case 38:
                         childMDIForm.View.Example38();
                         break;
+                    case 39:
+                        childMDIForm.View.Example39();
+                        break;
                 }
             }
         }

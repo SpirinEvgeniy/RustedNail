@@ -1149,7 +1149,10 @@ public:
   {
       ExampleOnNut(myAISContext(), myView());
   }
-
+  void Example39()
+  {
+      ExampleOnConstraints(myAISContext(), myView());
+  }
 
   void CreateGearRack()
   {

@@ -50,6 +50,7 @@ Class OCCTProxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Example36(): PrivateScope, Public, HideBySig
     Example37(): PrivateScope, Public, HideBySig
     Example38(): PrivateScope, Public, HideBySig
+    Example39(): PrivateScope, Public, HideBySig
     CreateGearRack(): PrivateScope, Public, HideBySig
     InitOCCTProxy(): PrivateScope, Public, HideBySig
     ~OCCTProxy(): PrivateScope, Public, HideBySig
