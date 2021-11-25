@@ -119,6 +119,8 @@
     <ProjectReference Include="..\OCCTProxy\OCCTProxy.vcxproj">
       <Project>{969912d9-78e7-4ab8-b4ff-6b52b4f03991}</Project>
       <Name>OCCTProxy</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1925,9 +1925,6 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 {
 	/// лекция 
 
-	
-	
-
 	Handle(Geom_Line) aLine;
 	Handle(Geom_Curve) aCurve;
 	
@@ -2020,6 +2017,7 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 	//}
 
 	TopoDS_Shape ChanfrenedBox = MC.Shape();
+	
 	Handle(AIS_Shape) aBlendedBox = new AIS_Shape(ChanfrenedBox);
 	myAISContext->SetColor(aBlendedBox, Quantity_NOC_YELLOW, Standard_False);
 	myAISContext->SetMaterial(aBlendedBox, Graphic3d_NOM_PLASTIC, Standard_False);
@@ -2059,16 +2057,16 @@ void ExampleOnConstraints(Handle(AIS_InteractiveContext) myAISContext, Handle(V3
 {
 	ClearScene(myAISContext, myView);
 	
-	gp_XYZ O(0, 0, 0);
-	gp_XYZ A(1, 2, 3);
-	gp_XYZ B(2, 2, 2);
-	gp_XYZ C(3, 2, 3);
+	//gp_XYZ O(0, 0, 0);
+	//gp_XYZ A(1, 2, 3);
+	//gp_XYZ B(2, 2, 2);
+	//gp_XYZ C(3, 2, 3);
 	
 	//Standard_Real result = A.DotCross(B, C);
 	//TopoDS_Vertex V1 = DisplayVertex(myAISContext, A, "A", false, 0.1, 0.1, 0.1);
 	//TopoDS_Vertex V2 = DisplayVertex(myAISContext, B, "B", false, 0.1, 0.1, 0.1);
 	//TopoDS_Vertex V3 = DisplayVertex(myAISContext, C, "C", false, 0.1, 0.1, 0.1);
-	TopoDS_Vertex V0 = DisplayVertex(myAISContext, O, "0", false, 0.1, 0.1, 0.1);
+	//TopoDS_Vertex V0 = DisplayVertex(myAISContext, O, "0", false, 0.1, 0.1, 0.1);
 
 	//DisplayEdgeByVertex(myAISContext, V0, V1, false, Aspect_TOL_DASH, 1.0);
 	//DisplayEdgeByVertex(myAISContext, V0, V2, false, Aspect_TOL_DASH, 1.0);
@@ -2078,37 +2076,28 @@ void ExampleOnConstraints(Handle(AIS_InteractiveContext) myAISContext, Handle(V3
 	
   //==============================================================
 
-	gp_Pnt2d P1(9, 6);
-	gp_Pnt2d P2(10, 4);
+	gp_Pnt2d P1(2, 3);
+	gp_Pnt2d P2(4, 4);
 	gp_Pnt2d P3(6, 7);
-	gp_Circ2d C1 = gce_MakeCirc2d(P1, P2, P3);
-	//GccEnt_QualifiedCirc QC = GccEnt::Outside(C1);
-	//gp_Pnt2d P4(-2, 7);
-	//gp_Pnt2d P5(12, -3);
-	//gp_Lin2d L = GccAna_Lin2d2Tan(P4, P5, Precision::Confusion()).ThisSolution(1);
-	//GccEnt_QualifiedLin QL = GccEnt::Unqualified(L);
-	//Standard_Real radius = 2;
-	//GccAna_Circ2d2TanRad TR(QC, QL, radius, Precision::Confusion());
-	//Standard_Real parsol, pararg;
-	//gp_Pnt2d tangentpoint1, tangentpoint2;
-	//gp_Circ2d circ;
-	//if (TR.IsDone())
-	//{
-	//	Standard_Integer NbSol = TR.NbSolutions();
-	//	for (Standard_Integer k = 1; k <= NbSol; k++)
-	//	{
-	//		circ = TR.ThisSolution(k);
-	//		// find the solution circle
-	//		TR.Tangency1(k, parsol, pararg, tangentpoint1);
-	//		// find the first tangent point
-	//		TR.Tangency2(k, parsol, pararg, tangentpoint2);
-	//		// find the second tangent point
-	//	}
-	//}
-
+	gp_Pnt2d P4(10, 10);
+	gp_Circ2d C2 = gce_MakeCirc2d(P1, P2, P3);
+	GccEnt_QualifiedCirc QC = GccEnt::Outside(C2);
+	//GccAna_Lin2d2Tan LT (QC, P4, Precision::Confusion());
+	
+	GccAna_Lin2d2Tan* LT = new GccAna_Lin2d2Tan(QC, P4, Precision::Confusion());
+	if (LT->IsDone())
+	{
+		Standard_Integer NbSol = LT->NbSolutions();
+		for (Standard_Integer k = 1; k <= NbSol; k++)
+		{
+			gp_Lin2d L = LT->ThisSolution(k);
+			
+		}
+	}
+	
 	//==============================================================
 	
-
+	
 
 	myView->FitAll();
 }

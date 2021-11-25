@@ -20,7 +20,6 @@ C:\AllProgrammingProjects\RustedNail\RustedNail\obj\Debug\RustedNail.pdb
 C:\AllProgrammingProjects\RustedNail\RustedNail\obj\Debug\RustedNail.ChildMDIForm.resources
 C:\WD\WorkDirMSVC\RustedNail\RustedNail\obj\Debug\RustedNail.ChildMDIForm.resources
 C:\WD\WorkDirMSVC\RustedNail\RustedNail\obj\Debug\RustedNail.ParentMDIForm.resources
-C:\WD\WorkDirMSVC\RustedNail\RustedNail\obj\Debug\RustedNail.csproj.CopyComplete
 C:\WD\WorkDirMSVC\RustedNail\RustedNail\bin\Debug\OCCTProxy.pdb
 C:\WD\WorkDirMSVC\RustedNail\win64\bind\RustedNail.exe.config
 C:\WD\WorkDirMSVC\RustedNail\win64\bind\RustedNail.exe
