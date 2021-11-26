@@ -42,13 +42,14 @@ namespace RustedNail
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matrixSolverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cutSimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip_OCCT_examples = new System.Windows.Forms.ToolStrip();
             this.toolStripRunButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripExampleIDTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripPanel1 = new System.Windows.Forms.ToolStripPanel();
             this.toolStripPanel4 = new System.Windows.Forms.ToolStripPanel();
-            this.cutSimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roMonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip_OCCT_examples.SuspendLayout();
             this.SuspendLayout();
@@ -140,7 +141,8 @@ namespace RustedNail
             // 
             this.modulesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.matrixSolverToolStripMenuItem,
-            this.cutSimToolStripMenuItem});
+            this.cutSimToolStripMenuItem,
+            this.roMonToolStripMenuItem});
             this.modulesToolStripMenuItem.Name = "modulesToolStripMenuItem";
             this.modulesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.modulesToolStripMenuItem.Text = "Modules";
@@ -151,6 +153,13 @@ namespace RustedNail
             this.matrixSolverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.matrixSolverToolStripMenuItem.Text = "Matrix solver";
             this.matrixSolverToolStripMenuItem.Click += new System.EventHandler(this.matrixSolverToolStripMenuItem_Click);
+            // 
+            // cutSimToolStripMenuItem
+            // 
+            this.cutSimToolStripMenuItem.Name = "cutSimToolStripMenuItem";
+            this.cutSimToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cutSimToolStripMenuItem.Text = "CutSim";
+            this.cutSimToolStripMenuItem.Click += new System.EventHandler(this.cutSimToolStripMenuItem_Click);
             // 
             // toolStrip_OCCT_examples
             // 
@@ -209,12 +218,12 @@ namespace RustedNail
             this.toolStripPanel4.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.toolStripPanel4.Size = new System.Drawing.Size(1184, 25);
             // 
-            // cutSimToolStripMenuItem
+            // roMonToolStripMenuItem
             // 
-            this.cutSimToolStripMenuItem.Name = "cutSimToolStripMenuItem";
-            this.cutSimToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cutSimToolStripMenuItem.Text = "CutSim";
-            this.cutSimToolStripMenuItem.Click += new System.EventHandler(this.cutSimToolStripMenuItem_Click);
+            this.roMonToolStripMenuItem.Name = "roMonToolStripMenuItem";
+            this.roMonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roMonToolStripMenuItem.Text = "RoMon";
+            this.roMonToolStripMenuItem.Click += new System.EventHandler(this.roMonToolStripMenuItem_Click);
             // 
             // ParentMDIForm
             // 
@@ -259,6 +268,7 @@ namespace RustedNail
         public System.Windows.Forms.ToolStripPanel toolStripPanel1;
         public System.Windows.Forms.ToolStripPanel toolStripPanel4;
         private System.Windows.Forms.ToolStripMenuItem cutSimToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roMonToolStripMenuItem;
     }
 }
 

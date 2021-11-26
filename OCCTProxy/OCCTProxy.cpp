@@ -1,6 +1,7 @@
 #include "Framework.h"
 #include "OCCTexamples.h"
 #include "CutSimCore.h"
+#include "RoMonCore.h"
 
 //! Auxiliary tool for converting C# string into UTF-8 string.
 static TCollection_AsciiString toAsciiString (String^ theString)
@@ -27,6 +28,12 @@ static TCollection_AsciiString toAsciiString (String^ theString)
 public ref class OCCTProxy
 {
 public:
+    NCollection_Haft<Handle(AIS_Shape)> StepShape;
+    NCollection_Haft<Handle(AIS_Shape)> StepShape1;
+    NCollection_Haft<Handle(AIS_Shape)> StepShape2;
+    NCollection_Haft<Handle(AIS_Shape)> StepShape3;
+    NCollection_Haft<Handle(AIS_Shape)> StepShape4;
+    NCollection_Haft<Handle(AIS_Shape)> StepShape5;
   // ============================================
   // Viewer functionality
   // ============================================
@@ -1159,6 +1166,92 @@ public:
       GearRack(myAISContext(), myView());
   }
 
+
+  void ImportRobotModels()
+  {           
+
+      StepShape() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test.step", 0.0);
+      StepShape1() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test1.step", 0.0);
+      StepShape2() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test2.step", 0.0);
+      StepShape3() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test3.step", 0.0);
+      StepShape4() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test4.step", 0.0);
+      StepShape5() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test5.step", 0.0);
+      
+      SetAxisVal(0, 0, 0, 0, 0, 0);
+      myView()->FitAll();
+  }
+
+  void SetAxisVal(double A1, double A2, double A3, double A4, double A5, double A6)
+  {
+      double fr1x = 25, fr1z = 400, fr2 = 455, fr3 = 35, fr4 = 420, fr5 = 80;
+   
+      gp_Dir dir1 = gp_Dir(0, 0, 1);
+      gp_Vec move1(dir1);
+      gp_Pnt pnt1(0, 0, 0);
+
+      gp_Dir dir2 = gp_Dir(0, 1, 0);
+      gp_Vec move2(dir2);
+      gp_Pnt pnt2(fr1x, 0, fr1z);
+
+      gp_Dir dir3 = gp_Dir(0, 1, 0);
+      gp_Vec move3(dir3);
+      gp_Pnt pnt3(fr1x, 0, fr1z + fr2);
+
+      gp_Dir dir4 = gp_Dir(1, 0, 0);
+      gp_Vec move4(dir4);
+      gp_Pnt pnt4(0, 0, fr1z + fr2 + fr3);
+
+      gp_Dir dir5 = gp_Dir(0, 1, 0);
+      gp_Vec move5(dir5);
+      gp_Pnt pnt5(fr1x + fr4, 0, fr1z + fr2 + fr3);
+
+      gp_Ax1 Ax1(pnt1, move1);
+
+      gp_Trsf trsf[6];
+
+
+      trsf[0].SetTranslation(gp_Vec(0, 0, 0));
+
+      trsf[1].SetRotation(Ax1, A1 * M_PI / 180);
+      trsf[1].PreMultiply(trsf[0]);
+
+      gp_Ax1 Ax2(pnt2, move2);
+      trsf[2].SetRotation(Ax2, A2 * M_PI / 180);
+      trsf[2].PreMultiply(trsf[1]);
+
+      gp_Ax1 Ax3(pnt3, move3);
+      trsf[3].SetRotation(Ax3, A3 * M_PI / 180);
+      trsf[3].PreMultiply(trsf[2]);
+
+      gp_Ax1 Ax4(pnt4, move4);
+      trsf[4].SetRotation(Ax4, A4 * M_PI / 180);
+      trsf[4].PreMultiply(trsf[3]);
+
+      gp_Ax1 Ax5(pnt5, move5);
+      trsf[5].SetRotation(Ax5, A5 * M_PI / 180);
+      trsf[5].PreMultiply(trsf[4]);
+
+
+
+      myAISContext()->Display(StepShape(), 1, -1, Standard_False);
+      myAISContext()->Display(StepShape1(), 1, -1, Standard_False);
+      myAISContext()->Display(StepShape2(), 1, -1, Standard_False);
+      myAISContext()->Display(StepShape3(), 1, -1, Standard_False);
+      myAISContext()->Display(StepShape4(), 1, -1, Standard_False);
+      myAISContext()->Display(StepShape5(), 1, -1, Standard_False);
+
+      myAISContext()->SetLocation(StepShape(), TopLoc_Location(trsf[0]));
+      myAISContext()->SetLocation(StepShape1(), TopLoc_Location(trsf[1]));
+      myAISContext()->SetLocation(StepShape2(), TopLoc_Location(trsf[2]));
+      myAISContext()->SetLocation(StepShape3(), TopLoc_Location(trsf[3]));
+      myAISContext()->SetLocation(StepShape4(), TopLoc_Location(trsf[4]));
+      myAISContext()->SetLocation(StepShape5(), TopLoc_Location(trsf[5]));
+
+
+
+      myAISContext()->UpdateCurrentViewer();
+  }
+
   /// <summary>
   ///Initialize OCCTProxy
   /// </summary>
@@ -1176,4 +1269,6 @@ private:
   NCollection_Haft<Handle(V3d_View)> myView;
   NCollection_Haft<Handle(AIS_InteractiveContext)> myAISContext;
   NCollection_Haft<Handle(OpenGl_GraphicDriver)> myGraphicDriver;
+
 };
+

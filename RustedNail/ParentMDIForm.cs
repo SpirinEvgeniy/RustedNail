@@ -1,5 +1,6 @@
 ﻿using RustedNail.Modules.MatrixSolver;
 using RustedNail.Modules.CutSim;
+using RustedNail.Modules.RoMon;
 
 using System;
 using System.Collections.Generic;
@@ -219,6 +220,19 @@ namespace RustedNail
             CutSimForm.View.SetDisplayMode(1);
             //CutSimForm.Test();
 
+        }
+
+        private void roMonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lastChildFormNumber++;
+
+            RoMonForm RoMonForm = new RoMonForm();
+            RoMonForm.MdiParent = this;
+            RoMonForm.Show();
+            RoMonForm.InitView();
+            RoMonForm.InitV3D();
+            RoMonForm.View.SetDisplayMode(1);
+            RoMonForm.CreateRobot();
         }
     }
 }

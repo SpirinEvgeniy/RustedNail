@@ -5,6 +5,13 @@ Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934
 	hash=None, flags=None
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class NCollection_Haft<opencascade::handle<AIS_Shape> >: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Methods:
+    op_FunctionCall(): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
 Class NCollection_Haft<opencascade::handle<V3d_Viewer> >: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
@@ -37,6 +44,13 @@ Class OCCTProxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Interfaces:
     System.IDisposable
+  Fields:
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape IsByValue : Public, InitOnly
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape1 IsByValue : Public, InitOnly
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape2 IsByValue : Public, InitOnly
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape3 IsByValue : Public, InitOnly
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape4 IsByValue : Public, InitOnly
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape5 IsByValue : Public, InitOnly
   Methods:
     Example27(): PrivateScope, Public, HideBySig
     Example28(): PrivateScope, Public, HideBySig
@@ -52,6 +66,8 @@ Class OCCTProxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Example38(): PrivateScope, Public, HideBySig
     Example39(): PrivateScope, Public, HideBySig
     CreateGearRack(): PrivateScope, Public, HideBySig
+    ImportRobotModels(): PrivateScope, Public, HideBySig
+    SetAxisVal(Double, Double, Double, Double, Double, Double): PrivateScope, Public, HideBySig
     InitOCCTProxy(): PrivateScope, Public, HideBySig
     ~OCCTProxy(): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig

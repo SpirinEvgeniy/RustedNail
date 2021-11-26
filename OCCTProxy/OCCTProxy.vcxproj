@@ -199,6 +199,7 @@
     <ClInclude Include="CutSimCore.h" />
     <ClInclude Include="Framework.h" />
     <ClInclude Include="OCCTexamples.h" />
+    <ClInclude Include="RoMonCore.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
