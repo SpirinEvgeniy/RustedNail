@@ -108,6 +108,7 @@ namespace RustedNail
             myOCCTProxy = new OCCTProxy();
             myCurrentMode = CurrentAction3d.CurAction3d_Nothing;
             myCurrentPressedKey = CurrentPressedKey.CurPressedKey_Nothing;
+            myDegenerateModeIsOn = true;
         }
 
         public void InitV3D()
