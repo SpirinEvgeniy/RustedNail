@@ -34,6 +34,7 @@ public:
     NCollection_Haft<Handle(AIS_Shape)> StepShape3;
     NCollection_Haft<Handle(AIS_Shape)> StepShape4;
     NCollection_Haft<Handle(AIS_Shape)> StepShape5;
+    NCollection_Haft<Handle(AIS_Shape)> StepShape6;
   // ============================================
   // Viewer functionality
   // ============================================
@@ -65,6 +66,14 @@ public:
       aWNTWindow->Map();
     }
     myAISContext() = new AIS_InteractiveContext( myViewer() );
+
+    Handle(Prs3d_Drawer) drawer = myAISContext()->DefaultDrawer();
+    drawer->SetFaceBoundaryDraw(1);
+    drawer->FaceBoundaryAspect()->SetWidth(1);
+    drawer->FaceBoundaryAspect()->SetColor(Quantity_NOC_BLACK);
+    drawer->FaceBoundaryAspect()->SetTypeOfLine(Aspect_TOL_SOLID);
+
+
     myAISContext()->UpdateCurrentViewer();
     myView()->Redraw();
     myView()->MustBeResized();
@@ -1169,14 +1178,15 @@ public:
 
   void ImportRobotModels()
   {           
-
+      CoolBackground(myAISContext(), myView());
       StepShape() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test.step", 0.0);
       StepShape1() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test1.step", 0.0);
       StepShape2() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test2.step", 0.0);
       StepShape3() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test3.step", 0.0);
       StepShape4() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test4.step", 0.0);
       StepShape5() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\test5.step", 0.0);
-      
+      StepShape6() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\tool2.step", 0.0);
+
       SetAxisVal(0, 0, 0, 0, 0, 0);
       myView()->FitAll();
   }
@@ -1207,12 +1217,12 @@ public:
 
       gp_Ax1 Ax1(pnt1, move1);
 
-      gp_Trsf trsf[6];
+      gp_Trsf trsf[7];
 
 
       trsf[0].SetTranslation(gp_Vec(0, 0, 0));
 
-      trsf[1].SetRotation(Ax1, A1 * M_PI / 180);
+      trsf[1].SetRotation(Ax1, -A1 * M_PI / 180);
       trsf[1].PreMultiply(trsf[0]);
 
       gp_Ax1 Ax2(pnt2, move2);
@@ -1224,14 +1234,15 @@ public:
       trsf[3].PreMultiply(trsf[2]);
 
       gp_Ax1 Ax4(pnt4, move4);
-      trsf[4].SetRotation(Ax4, A4 * M_PI / 180);
+      trsf[4].SetRotation(Ax4, -A4 * M_PI / 180);
       trsf[4].PreMultiply(trsf[3]);
 
       gp_Ax1 Ax5(pnt5, move5);
       trsf[5].SetRotation(Ax5, A5 * M_PI / 180);
       trsf[5].PreMultiply(trsf[4]);
 
-
+      trsf[6].SetRotation(Ax4, -A6 * M_PI / 180);
+      trsf[6].PreMultiply(trsf[5]);
 
       myAISContext()->Display(StepShape(), 1, -1, Standard_False);
       myAISContext()->Display(StepShape1(), 1, -1, Standard_False);
@@ -1239,6 +1250,7 @@ public:
       myAISContext()->Display(StepShape3(), 1, -1, Standard_False);
       myAISContext()->Display(StepShape4(), 1, -1, Standard_False);
       myAISContext()->Display(StepShape5(), 1, -1, Standard_False);
+      myAISContext()->Display(StepShape6(), 1, -1, Standard_False);
 
       myAISContext()->SetLocation(StepShape(), TopLoc_Location(trsf[0]));
       myAISContext()->SetLocation(StepShape1(), TopLoc_Location(trsf[1]));
@@ -1246,7 +1258,7 @@ public:
       myAISContext()->SetLocation(StepShape3(), TopLoc_Location(trsf[3]));
       myAISContext()->SetLocation(StepShape4(), TopLoc_Location(trsf[4]));
       myAISContext()->SetLocation(StepShape5(), TopLoc_Location(trsf[5]));
-
+      myAISContext()->SetLocation(StepShape6(), TopLoc_Location(trsf[6]));
 
 
       myAISContext()->UpdateCurrentViewer();

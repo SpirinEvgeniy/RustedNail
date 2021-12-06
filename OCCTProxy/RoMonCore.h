@@ -71,18 +71,50 @@ Handle(AIS_Shape) StepImport(Handle(AIS_InteractiveContext) myAISContext, Handle
 
 	Handle(AIS_Shape) StepShape = new AIS_Shape(shape);
 	
+	//const Handle(Prs3d_Drawer) selectionStyle = new Prs3d_Drawer();
+	//myAISContext->SelectionStyle()->SetColor(Quantity_NOC_BLUE1);
 
-	//Doc->myAISContext->SetColor(StepShape, Quantity_NOC_RED3, Standard_False);
+	Handle(Prs3d_LineAspect) Aspect = new Prs3d_LineAspect(Quantity_NOC_RED2,
+		Aspect_TypeOfLine::Aspect_TOL_SOLID, 2);
+	StepShape->Attributes()->SetWireAspect(Aspect);
 	myAISContext->SetTransparency(StepShape, transp, Standard_False);
 	myAISContext->SetMaterial(StepShape, Graphic3d_NOM_GOLD, Standard_False);
-	//Doc->myAISContext->SetMaterial(StepShape, Graphic3d_NOM_GLASS, Standard_False);
-	//Doc->myAISContext->Display(StepShape, Standard_False);
-	const Handle(Prs3d_Drawer) selectionStyle = new Prs3d_Drawer();
+	
 
-	myAISContext->SelectionStyle()->SetColor(Quantity_NOC_BLUE1);
 
-	//myAISContext->Display(StepShape, 1, -1, Standard_False);
+
 	myView->FitAll();
 	return StepShape;
 
+}
+
+void CoolBackground(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) myView)
+{
+	Standard_Real R1 = 100 / 255.;
+	Standard_Real G1 = 100 / 255.;
+	Standard_Real B1 = 255 / 255.;
+	Quantity_Color aColor1(R1, G1, B1, Quantity_TOC_RGB);
+
+	Standard_Real R2 = 50 / 255.;
+	Standard_Real G2 = 50 / 255.;
+	Standard_Real B2 = 50 / 255.;
+	Quantity_Color aColor2(R2, G2, B2, Quantity_TOC_RGB);
+
+	Aspect_GradientFillMethod aMethod = Aspect_GradientFillMethod(2);
+	myView->SetBgGradientColors(aColor1, aColor2, aMethod, 1);
+
+	myView->SetLightOn();
+	myView->SetVisualization(V3d_ZBUFFER);
+	myView->SetShadingModel(Graphic3d_TOSM_FRAGMENT);
+	Graphic3d_RenderingParams& RenderParams = myView->ChangeRenderingParams();
+	RenderParams.NbMsaaSamples = 1;
+
+
+	Graphic3d_RenderingParams& aParams = myView->ChangeRenderingParams();
+	aParams.Method = Graphic3d_RM_RASTERIZATION;
+	aParams.RaytracingDepth = 1;
+	aParams.IsShadowEnabled = false;
+	aParams.IsReflectionEnabled = false;
+	aParams.IsAntialiasingEnabled = true;
+	aParams.IsTransparentShadowEnabled = false;
 }

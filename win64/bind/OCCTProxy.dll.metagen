@@ -51,6 +51,7 @@ Class OCCTProxy: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape3 IsByValue : Public, InitOnly
     NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape4 IsByValue : Public, InitOnly
     NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape5 IsByValue : Public, InitOnly
+    NCollection_Haft<opencascade::handle<AIS_Shape> > StepShape6 IsByValue : Public, InitOnly
   Methods:
     Example27(): PrivateScope, Public, HideBySig
     Example28(): PrivateScope, Public, HideBySig
