@@ -71,8 +71,10 @@ Handle(AIS_Shape) StepImport(Handle(AIS_InteractiveContext) myAISContext, Handle
 
 	Handle(AIS_Shape) StepShape = new AIS_Shape(shape);
 	
-	//const Handle(Prs3d_Drawer) selectionStyle = new Prs3d_Drawer();
-	//myAISContext->SelectionStyle()->SetColor(Quantity_NOC_BLUE1);
+	const Handle(Prs3d_Drawer) selectionStyle = new Prs3d_Drawer();
+	myAISContext->SelectionStyle()->SetColor(Quantity_NOC_BLUE1);
+	
+
 
 	Handle(Prs3d_LineAspect) Aspect = new Prs3d_LineAspect(Quantity_NOC_RED2,
 		Aspect_TypeOfLine::Aspect_TOL_SOLID, 2);
@@ -80,10 +82,7 @@ Handle(AIS_Shape) StepImport(Handle(AIS_InteractiveContext) myAISContext, Handle
 	myAISContext->SetTransparency(StepShape, transp, Standard_False);
 	myAISContext->SetMaterial(StepShape, Graphic3d_NOM_GOLD, Standard_False);
 	
-	//myAISContext->Deactivate();
-	//myAISContext->Activate(StepShape, AIS_Shape::SelectionMode(TopAbs_FACE));
-	//myAISContext->Activate(StepShape, AIS_Shape::SelectionMode(TopAbs_EDGE));
-	//myAISContext->Activate(StepShape, AIS_Shape::SelectionMode(TopAbs_VERTEX));
+
 
 
 	myView->FitAll();

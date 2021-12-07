@@ -65,7 +65,7 @@ namespace RustedNail.Modules.RoMon
                                 break;
                             case CurrentAction3d.CurAction3d_DynamicRotation:
                                 if (!myDegenerateModeIsOn)
-                                    //myOCCTProxy.SetDegenerateModeOn();
+                                    myOCCTProxy.SetDegenerateModeOn();
                                 //start the rotation
                                 myOCCTProxy.StartRotation(e.X, e.Y);
                                 break;
@@ -82,7 +82,7 @@ namespace RustedNail.Modules.RoMon
                     if (myCurrentPressedKey == CurrentPressedKey.CurPressedKey_Ctrl)
                     {
                         if (!myDegenerateModeIsOn)
-                            //myOCCTProxy.SetDegenerateModeOn();
+                            myOCCTProxy.SetDegenerateModeOn();
                         myOCCTProxy.StartRotation(e.X, e.Y);
                     }
                     else
@@ -209,16 +209,16 @@ namespace RustedNail.Modules.RoMon
                             break;
                         case CurrentAction3d.CurAction3d_DynamicRotation:
                             myCurrentMode = CurrentAction3d.CurAction3d_Nothing;
-                            //if (!myDegenerateModeIsOn)
-                            //{
-                            //    myOCCTProxy.SetDegenerateModeOff();
-                            //    myDegenerateModeIsOn = false;
-                            //}
-                            //else
-                            //{
-                            //    myOCCTProxy.SetDegenerateModeOn();
-                            //    myDegenerateModeIsOn = true;
-                            //}
+                            if (!myDegenerateModeIsOn)
+                            {
+                                myOCCTProxy.SetDegenerateModeOff();
+                                myDegenerateModeIsOn = false;
+                            }
+                            else
+                            {
+                                myOCCTProxy.SetDegenerateModeOn();
+                                myDegenerateModeIsOn = true;
+                            }
                             break;
                         default:
                             break;
@@ -226,16 +226,16 @@ namespace RustedNail.Modules.RoMon
                     }
                     break;
                 case MouseButtons.Right:
-                    //if (!myDegenerateModeIsOn)
-                    //{
-                    //    myOCCTProxy.SetDegenerateModeOff();
-                    //    myDegenerateModeIsOn = false;
-                    //}
-                    //else
-                    //{
-                    //    myOCCTProxy.SetDegenerateModeOn();
-                    //    myDegenerateModeIsOn = true;
-                    //}
+                    if (!myDegenerateModeIsOn)
+                    {
+                        myOCCTProxy.SetDegenerateModeOff();
+                        myDegenerateModeIsOn = false;
+                    }
+                    else
+                    {
+                        myOCCTProxy.SetDegenerateModeOn();
+                        myDegenerateModeIsOn = true;
+                    }
                     break;
                 default:
                     break;

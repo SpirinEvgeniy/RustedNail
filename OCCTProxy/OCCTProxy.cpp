@@ -1190,6 +1190,16 @@ public:
       StepShape6() = StepImport(myAISContext(), myView(), "..\\..\\RustedNail\\Modules\\RoMon\\tool2.step", 0.0);
 
       SetAxisVal(0, 0, 0, 0, 0, 0);
+
+      //SimpleBody(myAISContext(), myView());
+
+      myAISContext()->Deactivate();
+      myAISContext()->Activate(AIS_Shape::SelectionMode(TopAbs_FACE));
+      myAISContext()->Activate(AIS_Shape::SelectionMode(TopAbs_EDGE));
+      myAISContext()->Activate(AIS_Shape::SelectionMode(TopAbs_VERTEX));
+
+
+
       myView()->FitAll();
   }
 
