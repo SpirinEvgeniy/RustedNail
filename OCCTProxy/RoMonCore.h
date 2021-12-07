@@ -80,7 +80,10 @@ Handle(AIS_Shape) StepImport(Handle(AIS_InteractiveContext) myAISContext, Handle
 	myAISContext->SetTransparency(StepShape, transp, Standard_False);
 	myAISContext->SetMaterial(StepShape, Graphic3d_NOM_GOLD, Standard_False);
 	
-
+	//myAISContext->Deactivate();
+	//myAISContext->Activate(StepShape, AIS_Shape::SelectionMode(TopAbs_FACE));
+	//myAISContext->Activate(StepShape, AIS_Shape::SelectionMode(TopAbs_EDGE));
+	//myAISContext->Activate(StepShape, AIS_Shape::SelectionMode(TopAbs_VERTEX));
 
 
 	myView->FitAll();

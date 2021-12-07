@@ -42,6 +42,10 @@
 #include<BRepFeat_MakeLinearForm.hxx>
 #include<BRepOffsetAPI_MakePipe.hxx>
 #include<AIS_TextLabel.hxx>
+#include<StdSelect_ShapeTypeFilter.hxx>
+#include<StdSelect_FaceFilter.hxx>
+#include<StdSelect_EdgeFilter.hxx>
+
 
 // для лекции
 #include <math_Vector.hxx> 
@@ -232,11 +236,24 @@ void SimpleBody(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) my
 
 	res = BRepAlgoAPI_Cut(res, moved_shape).Shape();
 
-	////
+	
 	Handle(AIS_Shape) aSphere = new AIS_Shape(res);
 	myAISContext->SetMaterial(aSphere, Graphic3d_NOM_PLASTIC, Standard_True);
 	myAISContext->SetColor(aSphere, Quantity_NOC_GREEN, Standard_True);
 	myAISContext->Display(aSphere, Standard_True);
+	
+
+	//Handle(StdSelect_ShapeTypeFilter) solidFilter = new StdSelect_ShapeTypeFilter(TopAbs_SOLID);
+	//Handle(StdSelect_FaceFilter) faceFilter = new StdSelect_FaceFilter(StdSelect_AnyFace);
+	//Handle(StdSelect_EdgeFilter) edgeFilter = new StdSelect_EdgeFilter(StdSelect_AnyEdge);
+	//myAISContext->AddFilter(solidFilter);
+	//myAISContext->AddFilter(faceFilter);
+	//myAISContext->AddFilter(edgeFilter);
+
+	myAISContext->Deactivate();
+	myAISContext->Activate(aSphere, AIS_Shape::SelectionMode(TopAbs_FACE));
+	myAISContext->Activate(aSphere, AIS_Shape::SelectionMode(TopAbs_EDGE));
+	myAISContext->Activate(aSphere, AIS_Shape::SelectionMode(TopAbs_VERTEX));
 
 	myView->FitAll();
 

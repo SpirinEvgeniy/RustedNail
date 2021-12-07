@@ -66,6 +66,8 @@ public:
       aWNTWindow->Map();
     }
     myAISContext() = new AIS_InteractiveContext( myViewer() );
+    myAISContext()->SetDisplayMode(AIS_Shaded, Standard_True);
+    myAISContext()->SetAutomaticHilight(Standard_True);
 
     Handle(Prs3d_Drawer) drawer = myAISContext()->DefaultDrawer();
     drawer->SetFaceBoundaryDraw(1);
