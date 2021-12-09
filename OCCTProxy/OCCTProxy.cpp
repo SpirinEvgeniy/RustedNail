@@ -3,6 +3,9 @@
 #include "CutSimCore.h"
 #include "RoMonCore.h"
 
+
+
+
 //! Auxiliary tool for converting C# string into UTF-8 string.
 static TCollection_AsciiString toAsciiString (String^ theString)
 {
@@ -1178,6 +1181,70 @@ public:
   }
 
 
+
+
+
+
+  ////////////////////  RoMon
+
+
+void SelectedVertexCoord()
+  {
+     
+    double* res = new double[3];
+
+   
+      //myAISContext()->InitSelected();
+      //if (myAISContext()->MoreSelected()) {
+      //    const TopoDS_Shape& aSelShape = myAISContext()->SelectedShape();
+      //    if (aSelShape.ShapeType() == TopAbs_VERTEX) {
+
+      //        TopTools_IndexedMapOfShape vertexMap;
+      //        TopExp::MapShapes(aSelShape, TopAbs_VERTEX, vertexMap);
+      //        Standard_Integer edgeCount = vertexMap.Extent();
+
+
+
+      //        for (int i = 1; i <= vertexMap.Extent(); i++) {
+      //            const TopoDS_Vertex& vert1 = TopoDS::Vertex(vertexMap(i));
+      //            gp_Pnt point1 = BRep_Tool::Pnt(vert1);                 
+      //            res[0] = point1.X();
+      //            res[1] = point1.Y();
+      //            res[2] = point1.Z();
+      //        }
+      //    }
+      //}
+
+   // NativeEntity::NativeEntity() vec { myVec = { 33.654, 44.654, 55.654 , 121.54, 1234.453 };
+
+  }
+
+  void SelectedEdgeCoord()
+  {
+      myAISContext()->InitSelected();
+      if (myAISContext()->MoreSelected()) {
+          const TopoDS_Shape& aSelShape = myAISContext()->SelectedShape();
+          if (aSelShape.ShapeType() == TopAbs_FACE) {
+              // Get list of edges
+              TopTools_IndexedMapOfShape edgeMap;
+              TopExp::MapShapes(aSelShape, TopAbs_EDGE, edgeMap);
+              Standard_Integer edgeCount = edgeMap.Extent();
+
+
+              // Loop through each edge
+              for (int i = 1; i <= edgeMap.Extent(); i++) {
+                  const TopoDS_Edge& edge = TopoDS::Edge(edgeMap(i));
+                  TopoDS_Vertex vert1, vert2;
+                  TopExp::Vertices(edge, vert1, vert2);
+                  gp_Pnt point1 = BRep_Tool::Pnt(vert1);
+                  gp_Pnt point2 = BRep_Tool::Pnt(vert2);
+
+              }
+          }
+      }
+  }
+
+
   void ImportRobotModels()
   {           
       CoolBackground(myAISContext(), myView());
@@ -1287,7 +1354,7 @@ public:
     myAISContext()=NULL;
   }
 
-private:
+public:
   // fields
   NCollection_Haft<Handle(V3d_Viewer)> myViewer;
   NCollection_Haft<Handle(V3d_View)> myView;

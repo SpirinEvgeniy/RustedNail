@@ -55,6 +55,10 @@
 #include <gp_Circ2d.hxx>
 #include <gce_MakeCirc2d.hxx>
 
+
+
+
+
 Handle(AIS_Shape) StepImport(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) myView, Standard_CString filename, double transp)
 {
 	STEPControl_Reader reader;

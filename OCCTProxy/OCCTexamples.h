@@ -1944,13 +1944,13 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 
 	Handle(Geom_Line) aLine;
 	Handle(Geom_Curve) aCurve;
-	
+
 
 	Handle(Geom_Point) aPnt1;
 
 	Handle(Geom_CartesianPoint) aPnt2, aPnt3;
-	aPnt2 = new Geom_CartesianPoint(0.0,0.0,0.0);
-	aPnt1 = aPnt2; 
+	aPnt2 = new Geom_CartesianPoint(0.0, 0.0, 0.0);
+	aPnt1 = aPnt2;
 	aPnt3 = Handle(Geom_CartesianPoint)::DownCast(aPnt1);
 
 	// пример решение СЛАУ
@@ -1959,11 +1959,11 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 	math_Vector x1(1, 3), x2(1, 3);
 
 
-	math_Gauss aSol(a); 
-	if (aSol.IsDone())         
+	math_Gauss aSol(a);
+	if (aSol.IsDone())
 	{
-		aSol.Solve(b1, x1);     
-		aSol.Solve(b2, x2); 
+		aSol.Solve(b1, x1);
+		aSol.Solve(b2, x2);
 	}
 
 
@@ -1985,17 +1985,17 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 	Standard_Real d = 15;
 	Standard_Real b = 16;
 
-	TopoDS_Edge E1 = BRepBuilderAPI_MakeEdge(gp_Pnt(b/2, 0.5*d, 0.), gp_Pnt(b/2, 0.5*D, 0.));
+	TopoDS_Edge E1 = BRepBuilderAPI_MakeEdge(gp_Pnt(b / 2, 0.5 * d, 0.), gp_Pnt(b / 2, 0.5 * D, 0.));
 	TopoDS_Edge E2 = BRepBuilderAPI_MakeEdge(gp_Pnt(b / 2, 0.5 * D, 0.), gp_Pnt(-b / 2, 0.5 * D, 0.));
 	TopoDS_Edge E3 = BRepBuilderAPI_MakeEdge(gp_Pnt(-b / 2, 0.5 * D, 0.), gp_Pnt(-b / 2, 0.5 * d, 0.));
 	TopoDS_Edge E4 = BRepBuilderAPI_MakeEdge(gp_Pnt(-b / 2, 0.5 * d, 0.), gp_Pnt(b / 2, 0.5 * d, 0.));
 
 	TopoDS_Wire W = BRepBuilderAPI_MakeWire(E1, E2, E3, E4);
-	
+
 	gp_Ax1 axe = gp_Ax1(gp_Pnt(0., 0., 0.), gp_Dir(1., 0., 0.));
 
 	Handle(Geom_Axis1Placement) Gax = new Geom_Axis1Placement(axe);
-	Handle(AIS_Axis) ax = new AIS_Axis(Gax);	
+	Handle(AIS_Axis) ax = new AIS_Axis(Gax);
 	Handle(AIS_Shape) aisW = new AIS_Shape(W);
 
 	//myAISContext->Display(ax, Standard_False);
@@ -2005,7 +2005,13 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 
 
 	// вращаем тело
-	TopoDS_Shape S = BRepPrimAPI_MakeRevol(W, axe, 2 * M_PI);	
+
+	TopoDS_Face face = BRepBuilderAPI_MakeFace(W);
+
+
+
+
+	TopoDS_Shape S = BRepPrimAPI_MakeRevol(face, axe, 2 * M_PI).Shape();
 	Handle(AIS_Shape) aisS = new AIS_Shape(S);
 	//myAISContext->SetColor(aisS, Quantity_NOC_GREEN, Standard_False);
 	//myAISContext->SetMaterial(aisS, Graphic3d_NOM_PLASTIC, Standard_False);
@@ -2014,10 +2020,10 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 
 	// фаски
 	BRepFilletAPI_MakeChamfer MC(S);
-	
+
 	TopTools_IndexedDataMapOfShapeListOfShape M;
 	TopExp::MapShapesAndAncestors(S, TopAbs_EDGE, TopAbs_FACE, M);
-	
+
 	TopoDS_Edge E = TopoDS::Edge(M.FindKey(2));
 	TopoDS_Face F = TopoDS::Face(M.FindFromIndex(2).First());
 	MC.Add(3, 3, E, F);
@@ -2034,37 +2040,55 @@ void ExampleOnNut(Handle(AIS_InteractiveContext) myAISContext, Handle(V3d_View) 
 	//}
 
 	TopoDS_Shape ChanfrenedBox = MC.Shape();
-	
-	Handle(AIS_Shape) aBlendedBox = new AIS_Shape(ChanfrenedBox);
-	myAISContext->SetColor(aBlendedBox, Quantity_NOC_YELLOW, Standard_False);
-	myAISContext->SetMaterial(aBlendedBox, Graphic3d_NOM_PLASTIC, Standard_False);
-	myAISContext->Display(aBlendedBox, Standard_False);
-	const Handle(AIS_InteractiveObject)& anIOBlendedBox = aBlendedBox;
-	myAISContext->SetSelected(anIOBlendedBox, Standard_False);
 
+	Handle(AIS_Shape) aBlendedBox = new AIS_Shape(ChanfrenedBox);
+	//myAISContext->SetColor(aBlendedBox, Quantity_NOC_YELLOW, Standard_False);
+	//myAISContext->SetMaterial(aBlendedBox, Graphic3d_NOM_PLASTIC, Standard_False);
+	//myAISContext->Display(aBlendedBox, Standard_False);
+	//const Handle(AIS_InteractiveObject)& anIOBlendedBox = aBlendedBox;
+	//myAISContext->SetSelected(anIOBlendedBox, Standard_False);
+	// 
 	// конец фаски
 
 	// вырез
 	Standard_Real fi = 0;
 	Standard_Real dfi = 2 * M_PI / 6;
 	Standard_Real x, y, x0, y0;
+
 	x0 = 0.5 * D * cos(0.0);
 	y0 = 0.5 * D * sin(0.0);
+
 	BRepBuilderAPI_MakeWire MW;
 	TopoDS_Wire DSW;
+
 	for (Standard_Integer i = 0; i <= 6; i++) {
 		fi += dfi;
-		x = 0.5*D * cos(fi);
-		y = 0.5*D * sin(fi);
-		TopoDS_Edge E = BRepBuilderAPI_MakeEdge(gp_Pnt(0,x0,y0), gp_Pnt(0,x,y) );
+		x = 0.5 * D * cos(fi);
+		y = 0.5 * D * sin(fi);
+		TopoDS_Edge E = BRepBuilderAPI_MakeEdge(gp_Pnt(-b / 2, x0, y0), gp_Pnt(-b / 2, x, y));
 		MW.Add(E);
 		x0 = x;
 		y0 = y;
 	}
+
 	DSW = MW.Wire();
+
 	Handle(AIS_Shape) aisW2 = new AIS_Shape(DSW);
 	myAISContext->Display(aisW2, Standard_False);
-	
+
+	TopoDS_Face myFaceProfile = BRepBuilderAPI_MakeFace(DSW);
+	gp_Vec aPrismVec(b, 0, 0);
+
+	TopoDS_Shape myBody = BRepPrimAPI_MakePrism(myFaceProfile, aPrismVec);
+	Handle(AIS_Shape) aismS = new AIS_Shape(myBody);
+
+	TopoDS_Shape theCommonSurface1 = BRepAlgoAPI_Common(myBody, ChanfrenedBox);
+
+	Handle(AIS_Shape) acommon1 = new AIS_Shape(theCommonSurface1);
+
+	myAISContext->SetColor(aBlendedBox, Quantity_NOC_YELLOW, Standard_False);
+	myAISContext->SetMaterial(aBlendedBox, Graphic3d_NOM_PLASTIC, Standard_False);
+	myAISContext->Display(acommon1, Standard_False);
 
 
 	myView->FitAll();

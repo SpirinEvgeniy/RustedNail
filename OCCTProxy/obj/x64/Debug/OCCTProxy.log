@@ -1,5 +1,9 @@
-﻿  OCCTProxy.cpp
+﻿  NativeEntity.cpp
+C:\WD\WorkDirMSVC\RustedNail\OCCTProxy\NativeEntity.cpp(20,36): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\WD\WorkDirMSVC\RustedNail\OCCTProxy\NativeEntity.cpp(20,36): warning C4267: инициализация: преобразование из "size_t" в "const int"; возможна потеря данных
+  OCCTProxy.cpp
+  Создание кода...
   .NETFramework,Version=v4.0.AssemblyAttributes.cpp
-  OCCTProxy.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  NativeEntity.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
      Создается библиотека ..\win64\\bind\OCCTProxy.lib и объект ..\win64\\bind\OCCTProxy.exp
   OCCTProxy.vcxproj -> C:\WD\WorkDirMSVC\RustedNail\win64\bind\OCCTProxy.dll

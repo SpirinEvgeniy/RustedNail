@@ -1,0 +1,1 @@
+C:\WD\WorkDirMSVC\RustedNail\OCCTProxy\obj\x64\Debug\OCCTProxy.vcxproj.AssemblyReference.cache

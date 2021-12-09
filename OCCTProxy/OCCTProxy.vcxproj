@@ -193,11 +193,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="NativeEntity.cpp" />
     <ClCompile Include="OCCTProxy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CutSimCore.h" />
     <ClInclude Include="Framework.h" />
+    <ClInclude Include="NativeEntity.h" />
     <ClInclude Include="OCCTexamples.h" />
     <ClInclude Include="RoMonCore.h" />
   </ItemGroup>

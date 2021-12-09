@@ -243,7 +243,18 @@ namespace RustedNail.Modules.RoMon
 
             RustedNail.ParentMDIForm parent = (RustedNail.ParentMDIForm)this.ParentForm;
             parent.SelectionChanged();
+
+            double d;
+            var entity = new ManagedEntity();
+            for (int i = 0; i < entity.GetVec().Length; i++)
+               d = (entity.GetVec()[i]);
+            //myOCCTProxy.SelectedVertexCoord();
+
+
+
+
         }
+
 
         private void RoMonForm_SizeChanged(object sender, EventArgs e)
         {
